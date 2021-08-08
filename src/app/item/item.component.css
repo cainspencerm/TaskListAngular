@@ -1,0 +1,56 @@
+.tile {
+    margin:5pt;
+    height:40pt;
+    width:300pt;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    color:white;
+    background-color: rgb(75, 75, 75);
+    border-radius:7px;
+}
+
+.tile:hover {
+    background-color: rgb(85, 85, 85);
+    filter: drop-shadow(1px 1px 1px rgb(10, 10, 10));
+}
+
+.complete {
+    margin:10pt;
+    width:13pt;
+    height:13pt;
+    -webkit-appearance:none;
+    border-radius:3pt;
+    background-color: rgb(75, 75, 75);
+	border: 2px solid whitesmoke;
+}
+
+.complete:checked:after {
+    content: '\2714';
+    font-size: 14px;
+	position: absolute;
+	top: 10pt;
+	left: 10pt;
+	color: #0091ff;
+}
+
+.name {
+    width:50%;
+    height:max-content;
+    float:left;
+    text-align:left;
+    display:flex;
+}
+
+.date {
+    width:30%;
+    float:left;
+    text-align:left;
+}
+
+.priority {
+    width:20pt;
+    height:20pt;
+    float:right;
+    display:flex;
+}

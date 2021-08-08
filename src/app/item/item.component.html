@@ -1,0 +1,10 @@
+<div>
+    <div class="tile" *ngFor="let item of items">
+        <input class="complete" *ngIf="item.isTask" type="checkbox">
+        <div *ngIf="item.isAppointment" style="width:34pt"></div>
+        <div class="name">{{item.name}}</div>
+        <div class="date">{{item.date | date:'shortTime'}}</div>
+        <!-- <div class="priority">{{item.priority | priority}}</div> -->
+        <div class="priority">{{item.priority | priority}}</div>
+    </div>
+</div>
