@@ -1,3 +1,7 @@
+* {
+    background-color: rgb(30, 30, 30);
+}
+
 .tile {
     margin:5pt;
     height:40pt;
@@ -6,51 +10,76 @@
     justify-content:center;
     align-items: center;
     color:white;
-    background-color: rgb(75, 75, 75);
+    background-color: rgba(255, 255, 255, 10%);
     border-radius:7px;
 }
 
 .tile:hover {
-    background-color: rgb(85, 85, 85);
-    filter: drop-shadow(1px 1px 1px rgb(10, 10, 10));
+    background-color: rgba(255, 255, 255, 15%);
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 15%));
 }
 
 .complete {
-    margin:10pt;
-    width:13pt;
-    height:13pt;
-    -webkit-appearance:none;
-    border-radius:3pt;
-    background-color: rgb(75, 75, 75);
+    margin: 15pt;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13pt;
+    height: 13pt;
+    border-radius: 3pt;
+    background-color: transparent;
+    cursor: pointer;
 	border: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.complete:after {
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 8pt;
+    display: none;
+}
+
+.complete:hover {
+    background-color: rgba(255, 255, 255, 15%);
+}
+
+.complete:checked {
+    background-color: royalblue;
 }
 
 .complete:checked:after {
-    content: '\2714';
-    font-size: 14px;
-	position: absolute;
-	top: 10pt;
-	left: 10pt;
-	color: #0091ff;
+    display: block;
 }
 
 .name {
-    width:50%;
-    height:max-content;
-    float:left;
-    text-align:left;
-    display:flex;
+    width: 50%;
+    text-align: left;
+    background-color: transparent;
+    color: whitesmoke;
 }
 
 .date {
-    width:30%;
-    float:left;
-    text-align:left;
+    width: 30%;
+    text-align: left;
+    background-color: transparent;
+    color: whitesmoke;
 }
 
 .priority {
-    width:20pt;
-    height:20pt;
-    float:right;
-    display:flex;
+    margin: 15pt;
+    width: 20pt;
+    height: 20pt;
+    float: right;
+    text-align: center;
+    border: none;
+    border-radius: 2pt;
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+.priority:hover {
+    background-color: rgba(255, 255, 255, 15%);
 }
