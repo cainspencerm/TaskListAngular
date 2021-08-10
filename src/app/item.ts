@@ -1,4 +1,5 @@
 export class Item {
+    id: number;
     name: string;
     description: string;
     priority: number;
@@ -7,6 +8,7 @@ export class Item {
     isTask: boolean;
 
     constructor() {
+        this.id = 0;
         this.name = '';
         this.description = '';
         this.priority = 0;

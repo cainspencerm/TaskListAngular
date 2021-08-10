@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Item, Task, Appointment } from '../item';
 
 @Component({
@@ -8,6 +8,7 @@ import { Item, Task, Appointment } from '../item';
 })
 export class ItemComponent implements OnInit {
   items: Item[] = [{
+    id: 1,
     name: 'Task',
     description: 'Description of task.',
     priority: 1,
@@ -18,6 +19,7 @@ export class ItemComponent implements OnInit {
     isTask: true
   } as Task,
   {
+    id: 2,
     name: 'Appointment',
     description: 'Description of appointment.',
     priority: 3,
@@ -33,5 +35,42 @@ export class ItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPriorityClick(id: number) {
+    this.items.forEach(element => {
+      if (element.id == id) {
+        element.priority += 1;
+
+        if (element.priority > 3) {
+          element.priority = 0;
+        }
+      }
+    });
+  }
+
+  toggleExpand(buttonId: string, contentId: string) {
+    var button = document.getElementById(buttonId);
+    var content = document.getElementById(contentId);
+    if (button == null || content == null) return;
+
+    if (button.classList.contains('drop__button--active')) {
+      content.style.maxHeight = '0';
+    } else {
+      // Deactivate any active buttons and content.
+      document.querySelectorAll('.drop__button--active').forEach(element => {
+        var id = element.id.split('_')[0] + '_content';
+        var element_content = document.getElementById(id);
+
+        if (element_content == null) return;
+
+        element_content.style.maxHeight = '0';
+        element.classList.toggle('drop__button--active');
+      });
+
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+
+    button.classList.toggle('drop__button--active');
   }
 }

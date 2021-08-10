@@ -2,30 +2,38 @@
     background-color: rgb(30, 30, 30);
 }
 
-.tile {
-    margin:5pt;
-    height:40pt;
-    width:300pt;
-    display:flex;
-    justify-content:center;
+.tile-header {
+    height: 40pt;
+    width: 300pt;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
     color:white;
     background-color: rgba(255, 255, 255, 10%);
     border-radius:7px;
+    border: none;
+    display: flex;
+    flex-direction: row;
 }
 
-.tile:hover {
+.tile-header:hover {
     background-color: rgba(255, 255, 255, 15%);
     filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 15%));
 }
 
+.tile-body {
+    width: 300pt;
+    height: 200pt;
+    background-color: white;
+    display: none;
+}
+
 .complete {
-    margin: 15pt;
     appearance: none;
     -webkit-appearance: none;
     width: 13pt;
     height: 13pt;
-    border-radius: 3pt;
+    border-radius: 2pt;
     background-color: transparent;
     cursor: pointer;
 	border: 2px solid whitesmoke;
@@ -55,21 +63,21 @@
 }
 
 .name {
-    width: 50%;
+    width: 40%;
     text-align: left;
     background-color: transparent;
     color: whitesmoke;
+    justify-content: center;
 }
 
 .date {
-    width: 30%;
+    width: 20%;
     text-align: left;
     background-color: transparent;
     color: whitesmoke;
 }
 
 .priority {
-    margin: 15pt;
     width: 20pt;
     height: 20pt;
     float: right;
@@ -83,3 +91,57 @@
 .priority:hover {
     background-color: rgba(255, 255, 255, 15%);
 }
+
+.drop__button {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20pt;
+    height: 20pt;
+    background-color: transparent;
+    border-radius: 2pt;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop__button:after {
+    content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 12pt;
+    transition: -webkit-transform .4s;
+}
+
+.drop__button:hover {
+    background-color: rgba(255, 255, 255, 15%);
+}
+
+.drop__button--active {
+    background: #555555;
+}
+
+.drop__button--active::after {
+    /* content: '\f077'; */
+    transition: -webkit-transform .4s;
+    transform: rotate(180deg);
+}
+
+.drop__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s;
+}
+
+.expander {
+    width: 300pt;
+    height: 200pt;
+    background-color: white;
+    display: none;
+}
+
+.drop:hover .tile-body {
+    display: block;
+}
+
