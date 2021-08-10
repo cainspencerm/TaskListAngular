@@ -7,59 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        .accordion__button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            background: #333333;
-            color: #ffffff;
-            text-align: left;
-            transition: background 0.2s;
-        }
-
-        .accordion__button::after {
-            content: '\25be';
-            float: right;
-            transform: scale(1.5);
-        }
-
-        .accordion__button--active {
-            background: #555555;
-        }
-
-        .accordion__button--active::after {
-            content: '\25b4';
-        }
-
-        .accordion__content {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.2s;
-
-            padding: 0 15px;
-            font-family: sans-serif;
-            background: #eeeeee;
-        }
-    </style>
 </head>
 
 <body>
     <div *ngFor="let item of items">
-        <div class="tile-header">
-            <input class="complete" *ngIf="item.isTask" type="checkbox">
-            <div *ngIf="item.isAppointment" style="width: 14pt;"></div>
-            <div class="name">{{item.name}}</div>
-            <div class="date">{{item.date | date:'shortTime'}}</div>
-            <button class="priority" (click)="onPriorityClick(item.id)">{{item.priority | priority}}</button>
-            <button id="{{item.id}}_button" class="drop__button"
-                (click)="toggleExpand(item.id + '_button', item.id + '_content')"></button>
-        </div>
-        <div id="{{item.id}}_content" class="drop__content">
-            <label>HELLO</label>
+        <div class="tile">
+            <div id="{{item.id}}_tile-header" class="tile-header">
+                <input class="complete" *ngIf="item.isTask" type="checkbox">
+                <div *ngIf="item.isAppointment" style="width: 14pt;"></div>
+                <div class="name">{{item.name}}</div>
+                <div class="date">{{item.date | date:'shortTime'}}</div>
+                <button class="priority" (click)="onPriorityClick(item.id)">{{item.priority | priority}}</button>
+                <button id="{{item.id}}_button" class="drop" (click)="toggleExpand(item.id)"></button>
+            </div>
+            <div id="{{item.id}}_content" class="tile-body">
+                HELLO!
+            </div>
         </div>
     </div>
 </body>

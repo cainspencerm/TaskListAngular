@@ -49,28 +49,30 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  toggleExpand(buttonId: string, contentId: string) {
-    var button = document.getElementById(buttonId);
-    var content = document.getElementById(contentId);
-    if (button == null || content == null) return;
+  toggleExpand(itemId: number) {
+    var tile = document.getElementById(itemId + '_tile-header');
+    var button = document.getElementById(itemId + '_button');
+    var content = document.getElementById(itemId + '_content');
+    if (tile == null || button == null || content == null) return;
 
-    if (button.classList.contains('drop__button--active')) {
+    if (button.classList.contains('drop--active')) {
       content.style.maxHeight = '0';
     } else {
       // Deactivate any active buttons and content.
-      document.querySelectorAll('.drop__button--active').forEach(element => {
+      document.querySelectorAll('.drop--active').forEach(element => {
         var id = element.id.split('_')[0] + '_content';
         var element_content = document.getElementById(id);
 
         if (element_content == null) return;
 
         element_content.style.maxHeight = '0';
-        element.classList.toggle('drop__button--active');
+        element.classList.toggle('drop--active');
       });
 
       content.style.maxHeight = content.scrollHeight + 'px';
     }
 
-    button.classList.toggle('drop__button--active');
+    button.classList.toggle('drop--active');
+    tile.classList.toggle('tile-header--active');
   }
 }

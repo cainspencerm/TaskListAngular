@@ -2,18 +2,30 @@
     background-color: rgb(30, 30, 30);
 }
 
+.tile {
+    border-radius: 4pt;
+    width: 300pt;
+    height: auto;
+}
+
 .tile-header {
     height: 40pt;
     width: 300pt;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color:white;
     background-color: rgba(255, 255, 255, 10%);
-    border-radius:7px;
-    border: none;
+    border-radius: 4pt;
     display: flex;
     flex-direction: row;
+    transition: .4s;
+}
+
+.tile-header--active {
+    border-top-left-radius: 4pt;
+    border-top-right-radius: 4pt;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .tile-header:hover {
@@ -23,9 +35,12 @@
 
 .tile-body {
     width: 300pt;
-    height: 200pt;
     background-color: white;
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s;
+    border-bottom-left-radius: 4pt;
+    border-bottom-right-radius: 4pt;
 }
 
 .complete {
@@ -92,7 +107,7 @@
     background-color: rgba(255, 255, 255, 15%);
 }
 
-.drop__button {
+.drop {
     appearance: none;
     -webkit-appearance: none;
     width: 20pt;
@@ -104,9 +119,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: whitesmoke;
 }
 
-.drop__button:after {
+.drop:after {
     content: "\f078";
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
@@ -114,34 +130,16 @@
     transition: -webkit-transform .4s;
 }
 
-.drop__button:hover {
+.drop:hover {
     background-color: rgba(255, 255, 255, 15%);
 }
 
-.drop__button--active {
+.drop--active {
     background: #555555;
 }
 
-.drop__button--active::after {
-    /* content: '\f077'; */
+.drop--active::after {
     transition: -webkit-transform .4s;
     transform: rotate(180deg);
-}
-
-.drop__content {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .4s;
-}
-
-.expander {
-    width: 300pt;
-    height: 200pt;
-    background-color: white;
-    display: none;
-}
-
-.drop:hover .tile-body {
-    display: block;
 }
 
