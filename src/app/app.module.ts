@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PriorityPipe } from './item/priority.pipe';
+import { ItemListComponent } from './item-list/item-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
-    PriorityPipe
+    PriorityPipe,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

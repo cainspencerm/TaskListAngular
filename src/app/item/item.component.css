@@ -1,9 +1,4 @@
-* {
-    background-color: rgb(30, 30, 30);
-}
-
 .tile {
-    border-radius: 4pt;
     width: 300pt;
     height: auto;
 }
@@ -63,14 +58,11 @@
     font-weight: 600;
     font-size: 8pt;
     display: none;
+    color: whitesmoke;
 }
 
 .complete:hover {
     background-color: rgba(255, 255, 255, 15%);
-}
-
-.complete:checked {
-    background-color: royalblue;
 }
 
 .complete:checked:after {
@@ -127,19 +119,14 @@
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
     font-size: 12pt;
-    transition: -webkit-transform .4s;
+    transition: transform .4s;
 }
 
 .drop:hover {
     background-color: rgba(255, 255, 255, 15%);
 }
 
-.drop--active {
-    background: #555555;
-}
-
 .drop--active::after {
-    transition: -webkit-transform .4s;
     transform: rotate(180deg);
 }
 

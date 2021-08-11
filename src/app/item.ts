@@ -24,6 +24,7 @@ export class Task extends Item {
 
     constructor() {
         super();
+        this.name = 'Task';
         this.deadline = new Date();
         this.date = this.deadline;
         this.isComplete = false;
@@ -38,6 +39,7 @@ export class Appointment extends Item {
 
     constructor() {
         super();
+        this.name = 'Appointment';
         this.start = new Date();
         this.date = this.start;
         this.stop = new Date();
