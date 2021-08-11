@@ -1,0 +1,30 @@
+.complete {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13pt;
+    height: 13pt;
+    border-radius: 2pt;
+    background-color: transparent;
+    cursor: pointer;
+	border: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.complete:after {
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 8pt;
+    display: none;
+    color: whitesmoke;
+}
+
+.complete:hover {
+    background-color: rgba(255, 255, 255, 15%);
+}
+
+.complete:checked:after {
+    display: block;
+}

@@ -1,0 +1,9 @@
+<div style="padding-top: 10pt; padding-left: 10pt; padding-right: 10pt">
+    <p>{{appointment.description}}</p>
+    <p>Start: {{appointment.start | date: 'short'}}</p>
+    <p>Stop: {{appointment.stop | date: 'short'}}</p>
+    <div>
+        <label style="margin-right: 5pt">Attendees:</label>
+        <button class="attendee-button" *ngFor="let attendee of appointment.attendees">{{attendee}}</button>
+    </div>
+</div>

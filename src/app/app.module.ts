@@ -7,13 +7,17 @@ import { ItemComponent } from './item/item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PriorityPipe } from './item/priority.pipe';
 import { ItemListComponent } from './item-list/item-list.component';
+import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     PriorityPipe,
-    ItemListComponent
+    ItemListComponent,
+    AppointmentDetailsComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

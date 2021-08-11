@@ -7,7 +7,7 @@ import { Item, Task, Appointment } from '../item';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item: Item = new Task();
+  @Input() item: Item = new Item();
   @Output() accordionEvent = new EventEmitter<number>();
 
   constructor() { }
@@ -25,31 +25,12 @@ export class ItemComponent implements OnInit {
   toggleExpand(itemId: number) {
     this.accordionEvent.emit(itemId);
   }
-  // // TODO: Move to higher container.
-  // toggleExpand(itemId: number) {
-  //   var tile = document.getElementById(itemId + '_tile-header');
-  //   var button = document.getElementById(itemId + '_button');
-  //   var content = document.getElementById(itemId + '_content');
-  //   if (tile == null || button == null || content == null) return;
 
-  //   if (button.classList.contains('drop--active')) {
-  //     content.style.maxHeight = '0';
-  //   } else {
-  //     // Deactivate any active buttons and content.
-  //     document.querySelectorAll('.drop--active').forEach(element => {
-  //       var id = element.id.split('_')[0] + '_content';
-  //       var element_content = document.getElementById(id);
+  getItemAsAppointment() {
+    return this.item as Appointment;
+  }
 
-  //       if (element_content == null) return;
-
-  //       element_content.style.maxHeight = '0';
-  //       element.classList.toggle('drop--active');
-  //     });
-
-  //     content.style.maxHeight = content.scrollHeight + 'px';
-  //   }
-
-  //   button.classList.toggle('drop--active');
-  //   tile.classList.toggle('tile-header--active');
-  // }
+  getItemAsTask() {
+    return this.item as Task;
+  }
 }

@@ -11,7 +11,6 @@
     align-items: center;
     background-color: rgba(255, 255, 255, 10%);
     border-radius: 4pt;
-    display: flex;
     flex-direction: row;
     transition: .4s;
 }
@@ -30,7 +29,8 @@
 
 .tile-body {
     width: 300pt;
-    background-color: white;
+    background-color: slateblue;
+    color: whitesmoke;
     overflow: hidden;
     max-height: 0;
     transition: max-height .4s;
@@ -130,3 +130,29 @@
     transform: rotate(180deg);
 }
 
+.edit {
+    color: whitesmoke;
+    background-color: rgba(255, 255, 255, 10%);
+    border: none;
+    border-radius: 3pt;
+    width: 50pt;
+    height: 25pt;
+}
+
+.edit:hover {
+    background-color: rgba(255, 255, 255, 15%);
+}
+
+.delete {
+    float: right;
+    color: whitesmoke;
+    background-color: rgba(255, 255, 255, 10%);
+    border: none;
+    border-radius: 3pt;
+    width: 50pt;
+    height: 25pt;
+}
+
+.delete:hover {
+    background-color: rgba(255, 255, 255, 15%);
+}

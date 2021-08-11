@@ -1,0 +1,8 @@
+<div style="padding-top: 10pt; padding-left: 10pt; padding-right: 10pt">
+    <p>{{task.description}}</p>
+    <p>Deadline: {{task.deadline | date: 'short'}}</p>
+    <div style="align-items: center; display: flex; flex-direction: row;">
+        <input id="complete" class="complete" type="checkbox">
+        <div style="width: 60pt; text-align: center;">Complete</div>
+    </div>
+</div>

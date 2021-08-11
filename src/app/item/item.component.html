@@ -8,6 +8,13 @@
         <button id="{{item.id}}_button" class="drop" (click)="toggleExpand(item.id)"></button>
     </div>
     <div id="{{item.id}}_content" class="tile-body">
-        HELLO!
+        <app-appointment-details *ngIf="item.isAppointment" [appointment]="getItemAsAppointment()">
+        </app-appointment-details>
+        <app-task-details *ngIf="item.isTask" [task]="getItemAsTask()"></app-task-details>
+        <hr style="color: whitesmoke; opacity: 100%; margin: 10pt;">
+        <div style="margin: 10pt;">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </div>
     </div>
 </div>

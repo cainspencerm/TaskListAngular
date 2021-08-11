@@ -30,7 +30,7 @@ export class ItemListComponent implements OnInit {
       isTask: false,
       start: new Date('1970-01-01'),
       stop: new Date('1970-01-01'),
-      attendees: ['Spencer, Preston']
+      attendees: ['Spencer', 'Preston', 'Spencer', 'Preston', 'Spencer', 'Preston']
     } as Appointment,
     {
       id: 3,
@@ -53,7 +53,7 @@ export class ItemListComponent implements OnInit {
       isTask: false,
       start: new Date('1970-01-01'),
       stop: new Date('1970-01-01'),
-      attendees: ['Spencer, Preston']
+      attendees: ['Spencer', 'Preston', 'Spencer', 'Preston', 'Spencer', 'Preston']
     } as Appointment
   ];
 
