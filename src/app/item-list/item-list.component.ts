@@ -41,7 +41,7 @@ export class ItemListComponent implements OnInit {
       isAppointment: false,
       isTask: true,
       deadline: new Date('1970-01-01'),
-      isComplete: false
+      isComplete: true
     } as Task,
     {
       id: 4,

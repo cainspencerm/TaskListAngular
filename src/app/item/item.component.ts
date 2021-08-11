@@ -7,7 +7,7 @@ import { Item, Task, Appointment } from '../item';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item: Item = new Item();
+  @Input() item: Item = new Task();
   @Output() accordionEvent = new EventEmitter<number>();
 
   constructor() { }

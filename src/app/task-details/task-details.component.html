@@ -2,7 +2,8 @@
     <p>{{task.description}}</p>
     <p>Deadline: {{task.deadline | date: 'short'}}</p>
     <div style="align-items: center; display: flex; flex-direction: row;">
-        <input id="complete" class="complete" type="checkbox">
+        <input id="complete" class="complete" type="checkbox" [checked]="task.isComplete"
+            (change)="task.isComplete = !task.isComplete">
         <div style="width: 60pt; text-align: center;">Complete</div>
     </div>
 </div>
