@@ -11,7 +11,7 @@ export class ItemListComponent implements OnInit {
   public items: Item[] = [
     {
       id: 1,
-      name: 'Task',
+      name: 'Task 1',
       description: 'Description',
       priority: 3,
       date: new Date('1970-01-01'),
@@ -22,7 +22,7 @@ export class ItemListComponent implements OnInit {
     } as Task,
     {
       id: 2,
-      name: 'Appointment',
+      name: 'Appointment 2',
       description: 'Description',
       priority: 3,
       date: new Date('1970-01-01'),
@@ -34,7 +34,7 @@ export class ItemListComponent implements OnInit {
     } as Appointment,
     {
       id: 3,
-      name: 'Task',
+      name: 'Task 3',
       description: 'Description',
       priority: 3,
       date: new Date('1970-01-01'),
@@ -45,7 +45,7 @@ export class ItemListComponent implements OnInit {
     } as Task,
     {
       id: 4,
-      name: 'Appointment',
+      name: 'Appointment 4',
       description: 'Description',
       priority: 3,
       date: new Date('1970-01-01'),

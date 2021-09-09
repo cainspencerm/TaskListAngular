@@ -1,5 +1,5 @@
 <div class="itemlist">
-    <div id="itemlist" *ngFor="let item of items; let last = last" style="justify-content: space-between">
+    <div id="itemlist" *ngFor="let item of items; let last = last">
         <app-item (accordionEvent)="toggleExpand(item.id)" [item]="item"></app-item>
         <div *ngIf="!last" style="height: 5pt;"></div>
     </div>

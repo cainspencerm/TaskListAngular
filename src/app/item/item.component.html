@@ -14,8 +14,40 @@
         <app-task-details *ngIf="item.isTask" [task]="getItemAsTask()"></app-task-details>
         <hr style="color: whitesmoke; opacity: 100%; margin: 10pt;">
         <div style="margin: 10pt;">
-            <button class="edit">Edit</button>
+            <!-- <button class="edit" data-bs-toggle="modal" data-bs-target="#{{item.id}}-example"
+                (click)="log()">Edit</button> -->
             <button class="delete">Delete</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="{{item.id}}-example">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="display: block;">
+                <label for="name">Name:</label>
+                <input id="name" type="text" [value]="item.name">
+
+                <label for="description">Description:</label>
+                <input id="description" type="text" [value]="item.description">
+
+                <label *ngIf="item.isTask" for="deadline">Deadline:</label>
+                <input *ngIf="item.isTask" id="deadline" type="text">
+
+                <label *ngIf="item.isAppointment" for="start">Start:</label>
+                <input *ngIf="item.isAppointment" id="start" type="text">
+
+                <label *ngIf="item.isAppointment" for="start">Stop:</label>
+                <input *ngIf="item.isAppointment" id="start" type="text">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

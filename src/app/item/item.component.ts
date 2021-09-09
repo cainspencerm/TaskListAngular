@@ -33,4 +33,8 @@ export class ItemComponent implements OnInit {
   getItemAsTask() {
     return this.item as Task;
   }
+
+  log() {
+    console.log(this.item.name);
+  }
 }
